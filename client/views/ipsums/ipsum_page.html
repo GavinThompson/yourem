@@ -1,70 +1,55 @@
 <template name="ipsumPage">
-  	
-  	<div id="ipsumGenerator">
-		<div class="ipsum">
-	    	<div class="ipsum-content">
+	<div id="ipsumGenerator">
 
-	      		<h1 class="bottomBuffer">
-	      			{{title}}
-	      		</h1>
-	      		
-	      		<h4 class="bottomBuffer">
-	      			Submitted by {{author}}
-	      		</h4>
-	      		
+		<div class="posts">
+			<h1 class="content-subhead">{{description}}</h1>
 
-	      		<h4>Description:</h4> 
-	      			<p class="bottomBuffer">{{description}}</p>
-	      			
+			<!-- A single blog post -->
+			<section class="post">
+				<header class="post-header">
+					<!-- <img class="post-avatar" alt="{{author}} avatar" height="48" width="48" src="avatar.png"> -->
 
-			
-			</div>
+					<h2 class="post-title">
+						{{title}}
+					</h2>
 
-			<div id="ipsum-generator">
-				<h4>Generate Paragraphs:</h4>  
-				
+					<p class="post-meta">
+						An ipsum by <a href="{{pathFor 'ipsumPage'}}">{{author}}</a>
+					</p>
+				</header>
 
-				<form role="form" id="ipsumForm">
-				<div class="row">
-					<div class="form-group col-md-3">
-					    <label for="numberParagraphs">Number of paragraphs:</label>
-					    <input type="number" class="form-control" name="paragraphs" id="numberParagraphs" value="5">
-					</div>
+				<div class="post-description">
+
+					<form class="pure-form pure-form-aligned">
+						<fieldset>
+
+							 <div class="pure-control-group">
+								<label for="paragraphs">Number of paragraphs:</label>
+								<input type="number" class="pure-input-1-1" name="paragraphs" id="numberParagraphs" value="5">
+							</div>
+
+							<div class="pure-control-group">
+								<label for="paragraphFlavour">Paragraph flavour:</label>
+								<select class="form-control" id="paragraphFlavour" name="contentStyle">
+									<option value="latin">Theme w/Latin</option>
+									<option value="theme">Themed Words Only</option>
+								</select>
+							</div>
+
+							<div class="pure-controls">
+								<button type="submit" class="pure-button pure-button-primary">Generate New Paragraphs</button>
+							</div>
+						</fieldset>
+					</form>
+
 				</div>
-
-				<div class="row">
-
-					<div class="form-group col-md-3">
-					    <label for="paragraphFlavour">Paragraph flavour:</label>
-					    <select class="form-control" id="paragraphFlavour" name="contentStyle">
-						    <option value="latin">Theme w/Latin</option>
-					        <option value="theme">Themed Words Only</option>
-					    </select>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="form-group col-md-3">
-						<button type="submit" class="btn btn-default">Ipsum Me!</button>
-					</div>
-				</div>
-
-				</form>
-
 
 				<div id="ipsum-canvas">
 					<h1></h1>
 					<div clas="innerCanvas"></div>
 				</div>
 
-			</div>
-	    	
-	    	<!-- <a href="{{pathFor 'ipsumPage'}}" class="discuss btn">Check Out Ipsum!</a> -->
-	  	</div>
+			</section>
+		</div>
 	</div>
-
-
 </template>
-
-
-
