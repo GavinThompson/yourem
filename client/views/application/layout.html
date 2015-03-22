@@ -1,13 +1,29 @@
 <template name="layout">
-		{{>header}}
-	
-	    <div id="main" class="row-fluid">
-			<div class="container darkBlueBG">  	
+	<div id="layout" class="pure-g">
 
-		    	<div class="innerContainer">
-				    {{> yield}}
-				</div>
-				    {{>footer}}
+		<div class="sidebar pure-u-1 pure-u-md-1-4">
+			<div class="header">
+				<h1 class="brand-title">Yourem Ipsum</h1>
+				<h2 class="brand-tagline">Your personal ipsum generator.</h2>
+
+				<nav class="nav">
+					<ul class="nav-list">
+						<li class="nav-item">
+							<a class="pure-button" href="{{pathFor 'ipsumSubmit'}}">Create New Ipsum</a>
+						</li>
+						<li class="nav-item">
+							<a class="pure-button" href="#">Why?</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
-	    </div>
+		</div>
+		
+		<div class="content pure-u-1 pure-u-md-3-4">
+			{{> yield}}
+
+			{{>footer}}
+		</div>
+
+	</div>
 </template>

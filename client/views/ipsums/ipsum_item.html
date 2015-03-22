@@ -1,18 +1,28 @@
 <template name="ipsumItem">
-	<div class="ipsum">
-		<h2>{{title}}</h2>
-		<h4>
-			<em>
-				{{description}} by {{author}}
-			</em>
-		</h4>
 
+	<div class="posts">
+		<h1 class="content-subhead">{{description}}</h1>
 
-	  
-    	<p id="ipsum-{{id}}" class="exampleParagraph">
-    		{{exampleIpsum}}
-    	</p>
+		<!-- A single blog post -->
+		<section class="post">
+			<header class="post-header">
+				<!-- <img class="post-avatar" alt="{{author}} avatar" height="48" width="48" src="avatar.png"> -->
 
-		<a href="{{pathFor 'ipsumPage'}}" class="btn btn-default brightGreenBG">Go to ipsum</a> 	    	
+				<h2 class="post-title">
+					{{title}}
+				</h2>
+
+				<p class="post-meta">
+					An ipsum by <a href="{{pathFor 'ipsumPage'}}">{{author}}</a>
+				</p>
+			</header>
+
+			<div class="post-description" id="ipsum-{{id}}">
+				<p>
+					{{exampleIpsum}}
+				</p>
+				<a href="{{pathFor 'ipsumPage'}}">Generate More...</a>
+			</div>
+		</section>
 	</div>
 </template>
