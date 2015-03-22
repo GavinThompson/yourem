@@ -5,7 +5,7 @@
 
 standard-app-packages
 insecure
-iron-router
-spin
+iron:router
+sacha:spin
 accounts-password
-less
+mrt:purecss
